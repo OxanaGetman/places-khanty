@@ -1,16 +1,16 @@
 import './App.css';
 import { useState } from 'react';
-import { data } from './data';
+import { dataCafe } from './dataCafe';
 
 function App() {
   const [place, setPlace] = useState(0);
-  const {id, placeName, description, image} = data[place];
-  console.log(data[place])
+  const {id, placeName, description, image} = dataCafe[place];
+  console.log(dataCafe[place])
 
   const nextPlace = () => {
     setPlace ((place => {
       place++;
-      if (place > data.length -1) {
+      if (place > dataCafe.length -1) {
         place=0;
       }
       return place;
@@ -21,7 +21,7 @@ function App() {
     setPlace ((place => {
       place --;
       if (place < 0) {
-        return data.length -1;
+        return dataCafe.length -1;
       }
       return place;
     }))
@@ -30,7 +30,7 @@ function App() {
   return (
     <div>
       <div className="App">
-        <h1>ГДЕ ПОГУЛЯТЬ</h1>
+        <h1>ГДЕ ПОЕСТЬ</h1>
       </div>
       <div className="App">
         <h2>{id}-{placeName}</h2>
